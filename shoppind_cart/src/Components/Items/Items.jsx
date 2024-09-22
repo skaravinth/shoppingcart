@@ -9,7 +9,7 @@ const ItemSelection = ({ onAddToCart }) => {
       id: 1,
       name: 'Chicken BBQ Pizza',
       image: 'https://www.savorynothings.com/wp-content/uploads/2022/05/bbq-chicken-recipe-image-3.jpg',
-      description: 'Chicken BBQ pizza with Mexican flavored toppings',
+      description: 'Chicken BBQ pizza with Mexican flavored toppinsg',
       variants: [
         { size: 'Large', price: 800 },
         { size: 'Medium', price: 500 },
