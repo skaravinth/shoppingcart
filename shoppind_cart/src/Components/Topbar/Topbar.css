@@ -1,0 +1,32 @@
+.topbar {
+    display: flex;
+    
+    align-items: center;
+    padding: 5px;
+    background-color: #333;
+    color: white;
+    width: 1470px;
+    height: 10px;
+    background-color:#012345 ;
+  }
+  
+  .time {
+    font-size: 12px;
+    margin-left: 10px;
+  }
+  
+  .icons-container {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .icons {
+    font-size: 12px;
+    margin-left: 10px;
+  }
+  
+  .icons1 {
+    font-size: 12px;
+    margin-left: 1360px;
+  }
+  
