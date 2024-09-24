@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsisVertical, faClose, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisVertical, faClose, faInfoCircle, faPrint } from '@fortawesome/free-solid-svg-icons';
 import './Catlog.css';
 
 const CatalogPage = ({ onItemClick }) => {
@@ -20,21 +20,22 @@ const CatalogPage = ({ onItemClick }) => {
   const filteredItems = activeCategory === 'All' ? items : items.filter(item => item.category === activeCategory);
 
   return (
-    <div className="catalog-container" style={{width:'550px'  }}>
+    <div className="catalog-container" style={{ width: '480px' }}>
       <div className="catalog-header">
-        <h2 style={{ color: 'black' }}>Catalog</h2>
+       Catalog
         <div className="header-icons" style={{ color: 'black' }}>
-          <FontAwesomeIcon icon={faEllipsisVertical} />
-          <FontAwesomeIcon icon={faClose} />
+          <FontAwesomeIcon icon={faEllipsisVertical} style={{ height: '20px' }} />
+          <FontAwesomeIcon icon={faClose} style={{ height: '20px', marginLeft: '20px' }} />
         </div>
       </div>
 
       <div className="category-filters">
         <button className={`button ${activeCategory === 'All' ? 'active' : ''}`} onClick={() => setActiveCategory('All')}>All</button>
-        <button className={`button ${activeCategory === 'Burger' ? 'active' : ''}`} onClick={() => setActiveCategory('Favourites')}>Favourites</button>
+        <button className={`button ${activeCategory === 'Favourites' ? 'active' : ''}`} onClick={() => setActiveCategory('Favourites')}>Favourites</button>
         <button className={`button ${activeCategory === 'Burger' ? 'active' : ''}`} onClick={() => setActiveCategory('Burger')}>Burger</button>
         <button className={`button ${activeCategory === 'Sandwich' ? 'active' : ''}`} onClick={() => setActiveCategory('Sandwich')}>Sandwich</button>
         <button className={`button ${activeCategory === 'Juice' ? 'active' : ''}`} onClick={() => setActiveCategory('Juice')}>Juice</button>
+        
       </div>
 
       <div className="catalog-grid">
@@ -44,17 +45,21 @@ const CatalogPage = ({ onItemClick }) => {
               <img src={item.image} alt={item.name} />
               <FontAwesomeIcon icon={faInfoCircle} className="info-icon" />
             </div>
-            <div className="item-details">
-              <h3>{item.name}</h3>
-              <p>{item.variants} variants</p>
-            </div>
+            <div className="item-details" style={{ color: 'black', fontSize: '13px', textAlign: 'start', display: 'flex', flexDirection: 'column', alignItems: 'flex-start',marginLeft:'3px' }}>
+  <span style={{ marginLeft: '4px', marginBottom: '2px',fontWeight:'bold',fontSize:'14px' }}>{item.name}</span>
+  {item.variants && <p className="item-detailsp" style={{ marginLeft: '4px', marginTop: '0' }}>{item.variants} variants</p>}
+</div>
+
           </div>
         ))}
       </div>
 
       <div className="footer">
-        <button className="footer-button" style={{ width: '180px' }}>Print Bill</button>
-        <button className="footer-button primary" style={{ width: '240px', marginRight: '20px', padding: '15px' }}>Proceed to Payment</button>
+        <button className="footer-button" style={{ width: '150px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#007bff', border: '1px solid #007bff' }}>
+          <FontAwesomeIcon icon={faPrint} style={{ marginRight: '10px', color: '#007bff' }} />
+          Print Bill
+        </button>
+        <button className="footer-button primary" style={{ width: '300px' }}>Proceed to Payment</button>
       </div>
     </div>
   );

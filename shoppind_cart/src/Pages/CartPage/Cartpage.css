@@ -1,0 +1,10 @@
+.button1 {
+    outline: none;
+    border: none; /* Prevents border from appearing */
+  }
+  
+  .button1:hover,
+ .button1focus {
+    outline: none; /* Ensures no outline on hover or focus */
+  }
+  

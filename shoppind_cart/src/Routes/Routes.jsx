@@ -17,7 +17,7 @@ const Applayout = () => {
           <div className="page-content">
             <Routes>
               <Route path="/" element={<Cartpage />} />
-              <Route path="/item/:id" element={<ItemSelection />} />
+              <Route path="/page" element={<ItemSelection />} />
             </Routes>
           </div>
         </div>

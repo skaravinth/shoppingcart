@@ -1,146 +1,175 @@
 .catalog-container {
-    font-family: Arial, sans-serif;
-    
-  }
+  font-family: Arial, sans-serif;
+}
+
+.catalog-header {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 50px;
+  color:black;
+  font-size: 22px;
+}
+
+.header-icons svg {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.category-filters {
+  display: flex;
+  gap: 10px;
+  margin-left: 40px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  overflow-x: auto; /* Horizontal scrolling */
+  white-space: nowrap; /* Prevent wrapping */
+  scrollbar-width: thin; /* For Firefox - thin scrollbar */
+  scrollbar-color: #4a90e2 #f0f0f0; /* Scrollbar thumb and track color for Firefox */
+}
+
+/* Custom Scrollbar for WebKit browsers (Chrome, Safari, Edge) */
+.category-filters::-webkit-scrollbar {
+  height: 4px; /* Height of the scrollbar to keep it functional */
+  width: 4px; /* Width for the scrollbar */
+}
+
+.category-filters::-webkit-scrollbar-thumb {
+  background-color: #007bff; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+.category-filters::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Color of the scrollbar track */
+}
+
+/* Scrollbar hidden but scrolling enabled */
+.category-filters::-webkit-scrollbar {
+  background: transparent; /* Hide the background to make it less noticeable */
+}
+
+.category-filters:hover::-webkit-scrollbar {
+  height: 6px; /* Make the scrollbar appear on hover */
+  width: 6px;  /* Make it slightly larger when interacting */
+}
+
+
+.button {
+  padding: 10px 12px;
+  border-radius: 4px;
+  width: 120px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+}
+
+.button:hover {
+  background-color: #f0f0f0;
+}
+
+.button.active {
+  border: none;
+  background-color: #007bff;
+  color: white;
+  outline: none;
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  border-radius: 10px;
+  gap: 13px;
+  margin-left: 30px;
+  margin: 0 40px;
+}
+
+.catalog-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  height: 150px;
+  width: 140px;
+}
+
+.item-image {
+  position: relative;
+  width: 100%;
+  height: 90px;
+  overflow: hidden;
+  border-bottom: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.item-image img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+}
+
+.info-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: #fff;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.item-detailsheading {
+  font-size: 16px;
+  font-weight: bolder;
+  color: #000000;
+  margin-left: 3px;
+}
+
+.item-detailsp {
+  font-size: 12px;
+  color: #aeb6bf;
   
-  .catalog-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 5px 45px;
-  }
-  
-  .header-icons svg {
-    margin-left: 10px;
-    cursor: pointer;
-  }
-  
-  .category-filters {
-    display: flex;
-    gap: 13px;
-    margin-left: 45px;
-    margin-bottom: 10px;
-  }
-  
-  .button {
-    padding: 6px 12px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    background-color: white;
-    color: black;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-  }
-  
-  .button:hover {
-    background-color: #f0f0f0;
-  }
-  
-  .button.active {
-    border: 2px solid #007bff;
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .catalog-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Fixed 3 columns */
-   grid-template-rows: repeat(2, 0.1fr); /* For even shorter rows */
- /* Fixed 3 rows */
- border-radius: 10px;
-    gap: 10px;
-    margin-left: 30px;
-    margin: 0 45px;
-    
-  }
-  
-  .catalog-item {
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-    height: 150px;
-  }
-  
-  .catalog-item:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    transform: translateY(-5px);
-  }
-  
-  .item-image {
-    position: relative;
-    width: 100%;
-    height: 80px;
-    overflow: hidden;
-    border-bottom: 1px solid #ddd;
-    border-radius: 10px;
-  }
-  
-  .item-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .info-icon {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    color: #fff;
-    font-size: 18px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    padding: 5px;
-  }
-  
-  
-  
-  .item-details h3 {
-    font-size: 14px;
-    
-    color: #333;
-  }
-  
-  .item-details p {
-    font-size: 10px;
-    color: #aeb6bf;
-  }
-  
-  .footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 20px;
-    background-color: #f8f9fa;
-    width: 480px;
-    border-top: 1px solid #ddd;
-    position: fixed;
-    bottom: 0;
-   
-    z-index: 1000; /* Ensures it's above other elements */
-  }
-  
-  .footer-button {
-   
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: #f1f1f1;
-    color: black;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-  }
-  
-  .footer-button:hover {
-    background-color: #e0e0e0;
-  }
-  
-  .footer-button.primary {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .footer-button.primary:hover {
-    background-color: #0056b3;
-  }
-  
+}
+
+.footer {
+  display: flex;
+  padding: 15px 20px;
+  background-color: #f8f9fa;
+  width: 480px;
+  border-top: 1px solid #ddd;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.footer-button {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  color: black;
+  margin-left: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  outline: none;
+}
+
+.footer-button:hover {
+  background-color: #e0e0e0;
+}
+
+.footer-button.primary {
+  background-color: #007bff;
+  color: white;
+  width: 300px;
+  padding: 15px;
+  outline: none;
+}
+
+.footer-button.primary:hover {
+  background-color: #0056b3;
+}

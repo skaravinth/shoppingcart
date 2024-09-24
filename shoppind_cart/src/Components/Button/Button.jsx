@@ -16,7 +16,7 @@ const QuantityButton = ({ quantity, handleQuantityChange }) => {
 
   return (
     <button onClick={handleClick} style={{
-      width: '200px',
+      width: '140px',
       height: '50px',
       display: 'flex',
       justifyContent: 'space-between',
