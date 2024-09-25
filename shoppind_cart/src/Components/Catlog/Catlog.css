@@ -22,36 +22,33 @@
   gap: 10px;
   margin-left: 40px;
   margin-top: 15px;
-  margin-bottom: 30px;
-  overflow-x: auto; /* Horizontal scrolling */
-  white-space: nowrap; /* Prevent wrapping */
-  scrollbar-width: thin; /* For Firefox - thin scrollbar */
-  scrollbar-color: #4a90e2 #f0f0f0; /* Scrollbar thumb and track color for Firefox */
-}
+  margin-bottom: 20px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 15px;
+  }
 
-/* Custom Scrollbar for WebKit browsers (Chrome, Safari, Edge) */
+
 .category-filters::-webkit-scrollbar {
-  height: 4px; /* Height of the scrollbar to keep it functional */
-  width: 4px; /* Width for the scrollbar */
+  height: 5px;
+  
+
+}
+.category-filters::-webkit-scrollbar-track {
+  margin-left: 200px;
+  margin-right: 200px;
+  background-color: white;
+  border-radius: 10px;
+ 
+
+
 }
 
 .category-filters::-webkit-scrollbar-thumb {
-  background-color: #007bff; /* Color of the scrollbar thumb */
-  border-radius: 10px; /* Rounded corners for the thumb */
-}
+ 
+  background: #4a90e2;
+  border-radius:10px;
 
-.category-filters::-webkit-scrollbar-track {
-  background-color: #f0f0f0; /* Color of the scrollbar track */
-}
-
-/* Scrollbar hidden but scrolling enabled */
-.category-filters::-webkit-scrollbar {
-  background: transparent; /* Hide the background to make it less noticeable */
-}
-
-.category-filters:hover::-webkit-scrollbar {
-  height: 6px; /* Make the scrollbar appear on hover */
-  width: 6px;  /* Make it slightly larger when interacting */
 }
 
 
